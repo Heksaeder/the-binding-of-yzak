@@ -344,7 +344,9 @@ MonoBehaviour:
   time: 0.05
   timeWords: 1.5
   fade: {fileID: 1248682928}
-  panel: {fileID: 0}
+  panel: {fileID: 990827697}
+  panelUI: {fileID: 0}
+  rb: {fileID: 0}
   data:
   - {fileID: 11400000, guid: 072d3d8e1d15f84478c155f6b4deecd4, type: 2}
   - {fileID: 11400000, guid: 61aa021aa4d3d4842a4a6da0828a7791, type: 2}
@@ -581,7 +583,7 @@ GameObject:
   - component: {fileID: 990827699}
   - component: {fileID: 990827698}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

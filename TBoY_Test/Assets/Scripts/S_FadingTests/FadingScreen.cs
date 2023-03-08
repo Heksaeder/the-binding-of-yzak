@@ -35,6 +35,6 @@ public class FadingScreen : MonoBehaviour
     }
 
     public void FadeToNextScene() {
-        StartCoroutine(FadeToNext("Tutorial"));
+        StartCoroutine(FadeToNext("03_Tutorial"));
     }
 }

@@ -19,6 +19,10 @@ public class CharByChar : MonoBehaviour
 
     public FadingScreen fade;
     public GameObject panel;
+    public GameObject panelUI;
+    public GameObject personnage;
+
+    public Rigidbody2D rb;
 
     [SerializeField] public StorylineSO[] data;
     private StorylineSO slSO;
@@ -32,6 +36,10 @@ public class CharByChar : MonoBehaviour
     // Désactive la boîte de dialogue lorsque le texte animé est terminé.
     void EndCheck() {
         if (i <= nbText-1) {
+            if (personnage != null) {
+                panelUI.SetActive(false);
+                rb.constraints = RigidbodyConstraints2D.FreezePosition;
+            }
             slSO = data[i];
                 textMeshProDialogue.text = slSO.Text;
             if (slSO.CharName != null) {
@@ -44,12 +52,24 @@ public class CharByChar : MonoBehaviour
             panel.SetActive(false);
             textMeshProDialogue.text = "";
             textMeshProName.text = "";
+            
+            if (personnage != null) {
+                rb.constraints = RigidbodyConstraints2D.None;
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                panelUI.SetActive(true);
+            }
+            
         }
     }
 
     // Récupère le panel à afficher au chargement de la scène, et initialise nbText à la longueur du tableau data.
     void Start() {
         panel = GameObject.Find("Panel");
+        personnage = GameObject.Find("Personnage");
+        if (personnage != null) {
+            panelUI = GameObject.Find("UI");
+            rb = GameObject.Find("Personnage").GetComponent<Rigidbody2D>();
+        }
         nbText = data.Length;
         EndCheck();
     }

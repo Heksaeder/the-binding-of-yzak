@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Test_FadeIn : MonoBehaviour
+public class FadeIn : MonoBehaviour
 {
     public GameObject fadingImg;
 
@@ -24,7 +24,7 @@ public class Test_FadeIn : MonoBehaviour
 
         fadingImg.GetComponent<CanvasRenderer>().SetAlpha(1.0f);
 
-        for (float t = 4.5f ; t > 0f; t-= Time.deltaTime) {
+        for (float t = 2.5f ; t > 0f; t-= Time.deltaTime) {
             fadingImg.GetComponent<CanvasRenderer>().SetAlpha(t/1.5f);
             yield return null;
         }
