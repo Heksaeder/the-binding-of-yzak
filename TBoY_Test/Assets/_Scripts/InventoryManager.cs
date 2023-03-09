@@ -27,6 +27,10 @@ public class InventoryManager : MonoBehaviour
 
     public void ListItems()
     {
+        foreach (Transform child in ItemContent)
+        {
+            Destroy(child.gameObject);
+        }
         foreach (var item in Items)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
