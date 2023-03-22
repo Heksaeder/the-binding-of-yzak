@@ -37,4 +37,11 @@ public class InventoryManager : MonoBehaviour
             itemIcon.sprite = item.itemImage;
         }
     }
+    public void ClearItems()
+    {
+        foreach (Transform child in ItemContent)
+        {
+            Destroy(child.gameObject);
+        }
+    }
 }
