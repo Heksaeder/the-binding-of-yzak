@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 1
   itemName: Bomb
   value: 1
-  itemImage: {fileID: -5163783275244954522, guid: a3ebf609d64354b47bd06cdd94098ebc, type: 3}
+  itemImage: {fileID: 21300000, guid: e15a0aaf619d8aa429bd091186fb29a2, type: 3}

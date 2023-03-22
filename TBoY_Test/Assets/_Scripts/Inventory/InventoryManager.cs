@@ -27,10 +27,6 @@ public class InventoryManager : MonoBehaviour
 
     public void ListItems()
     {
-        foreach (Transform child in ItemContent)
-        {
-            Destroy(child.gameObject);
-        }
         foreach (var item in Items)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
@@ -39,6 +35,13 @@ public class InventoryManager : MonoBehaviour
 
             itemName.text = item.itemName;
             itemIcon.sprite = item.itemImage;
+        }
+    }
+    public void ClearItems()
+    {
+        foreach (Transform child in ItemContent)
+        {
+            Destroy(child.gameObject);
         }
     }
 }

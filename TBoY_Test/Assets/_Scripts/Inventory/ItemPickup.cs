@@ -13,4 +13,11 @@ public class ItemPickup : MonoBehaviour
     private void OnMouseDown() {
         Pickup();
     }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player"))
+        {
+            Pickup();
+        }
+    }
 }
