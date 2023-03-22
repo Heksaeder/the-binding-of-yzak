@@ -8,7 +8,6 @@ public class FadeIn : MonoBehaviour
 {
     public GameObject fadingImg;
 
-
     void Awake() {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -29,8 +28,4 @@ public class FadeIn : MonoBehaviour
             yield return null;
         }
     }
-
-    /*public void FadeInScene() {
-        StartCoroutine(FadingIn());
-    }*/
 }

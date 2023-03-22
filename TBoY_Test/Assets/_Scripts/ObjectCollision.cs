@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
@@ -12,10 +13,10 @@ public class ObjectCollision : MonoBehaviour
     GameObject panel;
     public TextMeshProUGUI tmpText;
     public TextMeshProUGUI tmpName;
-
-    [SerializeField] public StorylineSO[] data;
-    private StorylineSO slSO;
-    int i;    
+    private GameObject go;
+    int i;
+    int sceneIndex;    
+    private TextData txtData;
     
 
     // Récupère les éléments de la boîte de dialogue (Panel + 2 TMP)
@@ -24,18 +25,24 @@ public class ObjectCollision : MonoBehaviour
         panel = GameObject.Find("Panel");
         tmpText = GameObject.Find("Dialogue").GetComponent<TextMeshProUGUI>();
         tmpName = GameObject.Find("Nom").GetComponent<TextMeshProUGUI>();
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Récupère l'objet collision et teste le tag pour afficher ou non la boîte de dialogue correspondante.
     private void OnCollisionEnter2D(Collision2D cls) {
+        txtData = cls.gameObject.GetComponent<TextData>();
         if (cls.collider.tag == "Furniture") {
             panel.SetActive(true);
-            for (i = 0 ; i < data.Length;i++) {
-                slSO = data[i];
-                tmpText.text = slSO.Text;
-                tmpName.text = slSO.CharName;
+            for (i = 0 ; i < txtData.data.Length;i++) {
+                txtData.slSO = txtData.data[i];
+                tmpText.text = txtData.slSO.Text;
+                tmpName.text = txtData.slSO.CharName;
             }
-        } else {
+        } else if (cls.collider.tag == "DoorToRight") {
+            SceneManager.LoadScene(sceneIndex+1);
+        } else if (cls.collider.tag == "DoorToLeft") {
+            SceneManager.LoadScene(sceneIndex-1);
+        } else{
             panel.SetActive(false);
         }
     }

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Furniture
+  - DoorToRight
+  - DoorToLeft
   layers:
   - Default
   - TransparentFX
