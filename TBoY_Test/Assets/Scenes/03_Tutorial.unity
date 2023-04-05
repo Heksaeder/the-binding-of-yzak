@@ -1557,7 +1557,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3c0c99072f76bbf4da0c4ddb4eedd975, type: 2}
   ItemContent: {fileID: 2077759910}
   InventoryItem: {fileID: 4123987205171858938, guid: c4e81bac96ec4874aa3b70b2d51c79b6, type: 3}
-  chestInventory: {fileID: 0}
+  chestInventory: {fileID: 1709062609}
 --- !u!1 &1328283053
 GameObject:
   m_ObjectHideFlags: 0

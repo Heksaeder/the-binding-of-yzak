@@ -16,15 +16,20 @@ public class InventoryManager : MonoBehaviour
     }
 
     // Update is called once per frame
+    public void TransferItem(Item item)
+    {
+        Items.Add(item);
+        ChestManager.Instance.Remove(item);
+    }
+
     public void AddItem(Item item)
     {
-    Items.Add(item);        
+        Items.Add(item);
     }
-    public void Remove(Item item)
+    public void RemoveItem(Item item)
     {
         Items.Remove(item);
     }
-
     public void ListItems()
     {
         ClearItems();
