@@ -27,6 +27,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ListItems()
     {
+        ClearItems();
         foreach (var item in Items)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
