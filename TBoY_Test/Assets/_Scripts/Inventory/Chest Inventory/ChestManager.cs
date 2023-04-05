@@ -12,18 +12,25 @@ public class ChestManager : MonoBehaviour
     public GameObject InventoryItem;
     public GameObject chestInventory;
 
-    private void Start()
+    public void TransferItem(Item item)
     {
-        chestInventory = GameObject.Find("ChestInventory");
+        Items.Add(item);
+        InventoryManager.Instance.RemoveItem(item);
+
     }
-    private void OnMouseDown() {
-            OpenChest();
-            chestInventory.SetActive(true);
-            Debug.Log("Chest Opened");
+    public void Add(Item item)
+    {
+        Items.Add(item);
+    }
+    public void Remove(Item item)
+    {
+        Items.Remove(item);
     }
     public void OpenChest()
     {
         ListItems();
+        chestInventory.SetActive(true);
+        Debug.Log("Chest Opened");
     }
     private void Awake()
     {
