@@ -43,6 +43,11 @@ public class InventoryManager : MonoBehaviour
             itemIcon.sprite = item.itemImage;
         }
     }
+    public void OpenInventory()
+    {  
+        ListItems();
+        gameObject.SetActive(true);
+    }
     public void ClearItems()
     {
         foreach (Transform child in ItemContent)
