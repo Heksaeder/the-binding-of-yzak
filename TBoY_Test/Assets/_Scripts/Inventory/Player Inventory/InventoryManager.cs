@@ -7,11 +7,12 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
     public List<Item> Items = new List<Item>();
-
+public GameObject Inventory;
     public Transform ItemContent;
     public GameObject InventoryItem;
     private void Awake()
     {
+        Inventory = GameObject.Find("Inventory");
         Instance = this;
     }
 
@@ -46,7 +47,7 @@ public class InventoryManager : MonoBehaviour
     public void OpenInventory()
     {  
         ListItems();
-        gameObject.SetActive(true);
+        Inventory.SetActive(true);
     }
     public void ClearItems()
     {
