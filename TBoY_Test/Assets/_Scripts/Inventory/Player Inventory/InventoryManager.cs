@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,7 +11,7 @@ public class InventoryManager : MonoBehaviour
 
     public List<Item> Items = new List<Item>();
 
-    private GameObject Inventory;
+    public GameObject Inventory;
 
     public Transform ItemContent;
 
@@ -18,7 +19,6 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        Inventory = GameObject.Find("Inventory");
         Instance = this;
     }
 
@@ -39,6 +39,17 @@ public class InventoryManager : MonoBehaviour
         Items.Remove (item);
     }
 
+    public static Item GetItem(string itemName)
+    {
+        foreach (var item in Instance.Items)
+        {
+            if (item.itemName == itemName)
+            {
+                return item;
+            }
+        }
+        return null;
+    }
     public void ListItems()
     {
         ClearItems();
