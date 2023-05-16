@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc29695c7c4bed4ea9bafe720599f04, type: 3}
   m_Name: PC
   m_EditorClassIdentifier: 
-  id: 0
-  itemName: 
-  value: 0
-  itemImage: {fileID: 0}
+  id: 4
+  itemName: PC
+  value: 1
+  itemImage: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
